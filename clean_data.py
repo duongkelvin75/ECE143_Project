@@ -35,6 +35,8 @@ def clean_data(cape_data):
     df = df.set_index('instr').reset_index()
 
     # remove outdated evals
+    unique_terms = df['term'].unique()[:25]
+    df = df[df['term'].isin(unique_terms)]
 
     # seperate course name from number
 
