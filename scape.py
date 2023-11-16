@@ -15,6 +15,9 @@ def get_raw_cape_dataframe(page_url, data_url, page_title):
         page_url (str): url of page
         data_url (str): url of where data is located
         page_title (str): page title to confirm SSO login successful
+
+    Return:
+        df: dataframe of cape submissions
     '''
 
     assert isinstance(page_url, str), "page_url is not a string"
