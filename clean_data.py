@@ -23,8 +23,7 @@ def clean_data(cape_data):
         'Instructor': 'instr', 'Course': 'course', 'Term': 'term', 'Enroll': 'enroll',
         'Evals Made': 'evals', 'Rcmnd Class': 'rmd_class',
         'Rcmnd Instr': 'rmd_instr', 'Study Hrs/wk': 'time',
-        'Avg Grade Received': 'grade'
-})
+        'Avg Grade Received': 'grade'})
 
     # drop rows with missing data
     df = df.dropna()
@@ -34,6 +33,16 @@ def clean_data(cape_data):
 
     # set and reset index to build an incremental index that starts at 0
     df = df.set_index('instr').reset_index()
+
+    # remove outdated evals
+
+    # seperate course name from number
+
+    # seperate letter grade and number
+
+    # convert percentages into number
+
+
 
     return df
 

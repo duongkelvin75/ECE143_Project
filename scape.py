@@ -6,6 +6,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions
 
 ##Data scrapping code originates from https://github.com/andportnoy/smartercapes.com
+##The code was modified to fit the requirements of the class
 def get_raw_cape_dataframe(page_url, data_url, page_title):
     '''
     Scrape date from CAPES and returns Dataframe of capes
