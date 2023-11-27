@@ -1,5 +1,6 @@
 import pandas as pd
 
+
 def clean_data(cape_data):
     '''
     Cleans raw cape data
@@ -16,14 +17,14 @@ def clean_data(cape_data):
     # subset the important columns
     df = df[['Instructor', 'Course', 'Term', 'Enroll', 'Evals Made', 'Rcmnd Class',
              'Rcmnd Instr', 'Study Hrs/wk',
-             'Avg Grade Received']]
+             'Avg Grade Expected', 'Avg Grade Received']]
 
     # rename the columns for convenience
     df = df.rename(columns={
         'Instructor': 'instr', 'Course': 'course', 'Term': 'term', 'Enroll': 'enroll',
         'Evals Made': 'evals', 'Rcmnd Class': 'rmd_class',
         'Rcmnd Instr': 'rmd_instr', 'Study Hrs/wk': 'time',
-        'Avg Grade Received': 'grade'})
+        'Avg Grade Expected': 'Expected Grade', 'Avg Grade Received': 'Actual Grade'})
 
     # drop rows with missing data
     df = df.dropna()
@@ -44,9 +45,13 @@ def clean_data(cape_data):
     df = df.drop(columns=['course', 'Course_Name1', 'Course_Name2'])
 
     # seperate letter grade and number
-    df[['Grade','GPA']] = df['grade'].str.split(' ', expand=True)
-    df['GPA'] = df['GPA'].str[1:-1].astype(float)
-    df = df.drop(columns=['grade'])
+    df[['expected_grade', 'expected_gpa']] = df['Expected Grade'].str.split(' ', expand=True)
+    df['expected_gpa'] = df['expected_gpa'].str[1:-1].astype(float)
+    df = df.drop(columns=['Expected Grade'])
+
+    df[['actual_grade','actual_gpa']] = df['Actual Grade'].str.split(' ', expand=True)
+    df['actual_gpa'] = df['actual_gpa'].str[1:-1].astype(float)
+    df = df.drop(columns=['Actual Grade'])
 
     # convert percentages into number
     df['rmd_instr'] = df['rmd_instr'].str[:-1].astype(float)
@@ -54,9 +59,9 @@ def clean_data(cape_data):
 
     return df
 
-path = "ECE143_Project/data.csv"
+path = "data.csv"
 cape_data = pd.read_csv(path)
 clean = clean_data(cape_data)
 
-export = 'ECE143_Project/data_clean.csv'
+export = 'data_clean.csv'
 clean.to_csv(export, index=False)
