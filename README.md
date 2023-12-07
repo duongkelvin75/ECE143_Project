@@ -5,6 +5,16 @@ UCSD is a BIG school with 106 departments and 2452 total classes. Class selectio
 
 This project takes inspiration from https://github.com/andportnoy/smartercapes.com
 
+## Structure
+- Recommendation.ipynb
+- clean_data.py
+- data.csv
+- data_clean.csv
+- requirements.txt
+- scape.py
+- visualization.ipynb
+- README.md
+ 
 ## Table of contents
 - [Data_Collection](#Data_collection)
 - [Data_processing](#Data_processing)
@@ -12,9 +22,10 @@ This project takes inspiration from https://github.com/andportnoy/smartercapes.c
 
 ## Data_collection
 **![Raw Data](https://lh7-us.googleusercontent.com/FO48FO54fkFQFCokSU4OCsrPLDhMAv8h_Aajleb9M6niLAi0GXjBDc3We3HT59Yai4prKd5iQFjBSJ2jKHAJnCGzpxys6zTVNnF2o3zxXTuzAAGgmblmLZ_m1w05FgRkTeJETUxKxP-z-9lgXfoAzxbHAQ=s2048)**
-`scrape.py` is used to scrape data from CAPE. The figure above shows the sample raw data from `data.csv`.
+The figure above shows the sample raw data from the capes website. `scrape.py` is used to scrape data from CAPE and export as `data.csv`.
 
 ## Data_processing
+`data_clean.py` imports `data.csv` and filters it. A cleaned data set is expoerted as `clean_data.py`
 
 -   Scrape course evaluations from CAPE
     
@@ -37,12 +48,11 @@ This project takes inspiration from https://github.com/andportnoy/smartercapes.c
 -   Give recommendations and visualizations
 
 
-## Course Data analysis
-
-
 
 ## Course Recommendation System 
-We give 5 weights for the recommendation system.
+`Recommendation.ipynb` imports `data_clean.py`. It takes user input and creates a receommendation score. It also presents the user with useful graphs what explain its decision making
+
+`visualization.ipynb` imports `data_clean.py`. It takes the uset input and visualizes it in various graphs for the presentation. Visualizaiton is split between `visualization.ipynb` and  `Recommendation.ipynb`
 
 
 ## Requirements
