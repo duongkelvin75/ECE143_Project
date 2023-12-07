@@ -1,6 +1,5 @@
-pandas
-natsort
-numpy
-matplotlib
-seaborn
-scipy
+matplotlib==3.5.3
+natsort==7.1.1
+numpy==1.22.3
+pandas==1.4.4
+scipy==1.7.3
