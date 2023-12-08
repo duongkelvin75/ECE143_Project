@@ -9,8 +9,8 @@ This project takes inspiration from https://github.com/andportnoy/smartercapes.c
 ## Structure
 - [scrape.py](#Data_Collection)
 - [clean_data.py](#Data_Processing)
-- [visualization.ipynb](#Visualization)
 - [recommendation.ipynb](#Course_Recommendation_System)
+- [visualization.ipynb](#Visualization)
 - [requirements.txt](#Requirements)
 - data.csv
 - data_clean.csv
@@ -29,11 +29,14 @@ The figure above shows the sample raw data from the capes website. `scrape.py` i
 |Butler, Elizabeth Annette | WI23 | 65 | 46 | 93.5 | 93.3 | 4.15 | AAS 11 | Intro Black Diasporic Studies (A) | A- | 3.84 | A- | 3.71
 
 
+## Course_Recommendation_System 
+`Recommendation.ipynb` imports `data_clean.py`. It takes user input and creates a recommendation score. It also presents the user with useful graphs what explain its decision making.
+
+$Score = w_1*ActualGPA+w_2*InverseTimeSpent+w_3*(ActualGPA - ExpectedGPA)+w_4*RMDClass+w_5*RMDInstr$s
+
+
 ## Visualization
 `visualization.ipynb` imports `data_clean.py`. It takes the user input and visualizes it in various graphs for the presentation. Visualization is split between `visualization.ipynb` and  `Recommendation.ipynb`
-
-## Course_Recommendation_System 
-`Recommendation.ipynb` imports `data_clean.py`. It takes user input and creates a receommendation score. It also presents the user with useful graphs what explain its decision making.
 
 
 ## Requirements
