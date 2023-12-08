@@ -1,5 +1,6 @@
 
 
+
 # ECE143_Project
 
 UCSD is a BIG school with 106 departments and 2452 total classes. Class selection can be difficult and overwhelming, especially for freshman and transfer students. This project aims to build a course recommendation system for UCSD students from CAPE (cape.ucsd.edu), which is a dataset that collects evaluation from students until Spring 2023.
@@ -34,10 +35,19 @@ The figure above shows the sample raw data from the capes website. `scrape.py` i
 
 $Score = [w_1,w_2,w_3,w_4,w_5]*[ActualGPA,InverseTimeSpent,ActualGPA - ExpectedGPA,RMDClass,RMDInstr]^T$
 
+Bar charts of these factors are plotted respectively.
 
 ## Visualization
 `visualization.ipynb` imports `data_clean.py`. It takes the user input and visualizes it in various graphs for the presentation. Visualization is split between `visualization.ipynb` and  `Recommendation.ipynb`
 
+- Comparison of average gpa / time spent outside of class by quarter
+- Expected and actual gpa in different quarters
+- Average gpa received / time spent for upper division ECE courses by EE major depth
+- Correlation: 
+-- Time Spent vs Course Recommendation %
+-- Time Spent vs Instructor Recommendation %
+-- Actual GPA vs Course Recommendation %
+-- Actual GPA vs Instructor Recommendation %
 
 ## Requirements
 
