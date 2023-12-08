@@ -44,10 +44,10 @@ Bar charts of these factors are plotted respectively.
 - Expected and actual gpa in different quarters
 - Average gpa received / time spent for upper division ECE courses by EE major depth
 - Correlation: 
--- Time Spent vs Course Recommendation %
--- Time Spent vs Instructor Recommendation %
--- Actual GPA vs Course Recommendation %
--- Actual GPA vs Instructor Recommendation %
+	- Time Spent vs Course Recommendation %
+	- Time Spent vs Instructor Recommendation %
+	- Actual GPA vs Course Recommendation %
+	- Actual GPA vs Instructor Recommendation %
 
 ## Requirements
 
