@@ -32,7 +32,7 @@ The figure above shows the sample raw data from the capes website. `scrape.py` i
 ## Course_Recommendation_System 
 `Recommendation.ipynb` imports `data_clean.py`. It takes user input and creates a recommendation score. It also presents the user with useful graphs what explain its decision making.
 
-$Score = w_1*ActualGPA+w_2*InverseTimeSpent+w_3*(ActualGPA - ExpectedGPA)+w_4*RMDClass+w_5*RMDInstr$
+$Score = [w_1,w_2,w_3,w_4,w_5]*[ActualGPA,InverseTimeSpent,ActualGPA - ExpectedGPA,RMDClass,RMDInstr]^T$
 
 
 ## Visualization
